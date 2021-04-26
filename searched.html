@@ -57,6 +57,9 @@
                 httpreq.onreadystatechange = function(){
                     if (this.readyState == 4 && this.status == 200){
                         movie_data = JSON.parse(this.responseText);
+                        if(movie_data.Title == undefined){
+                            window.location.href = "movie_not_found.html";
+                        }
                         document.getElementById("name").innerHTML = "<h1>"+movie_data.Title+" ("+movie_data.Year+")"+"</h1>";
                         document.getElementById("poster").src = movie_data.Poster;
                         document.getElementById("release-date-result").innerHTML = movie_data.Released;

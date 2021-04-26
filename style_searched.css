@@ -4,11 +4,15 @@
 }
 
 body{
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-image: linear-gradient(to right top, #fec5bb, #f8cdbc, #f2d5c1, #ecdcca, #e8e2d5, #e8e2d3, #e8e3d2, #e7e3d0, #eadec1, #efd8b2, #f6d0a5, #fec89a);
 }
 
 .container{
-    height:98vh;
+    height:100%;
 }
 
 .navbar{
