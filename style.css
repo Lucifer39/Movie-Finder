@@ -1,0 +1,57 @@
+*{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    
+}
+
+body{
+    background-image: linear-gradient(to right top, #fec5bb, #f8cdbc, #f2d5c1, #ecdcca, #e8e2d5, #e8e2d3, #e8e3d2, #e7e3d0, #eadec1, #efd8b2, #f6d0a5, #fec89a);
+}
+
+.container{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.title{
+    font-size: 70px;
+    font-weight: 70;
+    font-family: 'Sacramento', cursive;
+    text-align: center;
+}
+
+.search-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button{
+    margin-top: 30px;
+}
+
+#click-here{
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #926057;
+    box-shadow: 0 4px 8px 0 #92605767, 0 6px 20px 0 #92605767;
+}
+
+.search{
+    width: 200%;
+    height: 40px;
+    padding-left: 20px;
+    border-radius: 10px;
+    border: 1px solid #926057;
+    outline: none;
+}
+
+@media (max-width: 400px) and (min-width: 300px){
+    .search{
+        width: 100%;
+    }
+}

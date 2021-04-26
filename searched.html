@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's my movie?</title>
+    <link rel="stylesheet" type="text/css" href="style_searched.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">What's my movie?</div>
+            <div class="links">
+                <input id="search-bar">
+                <button id = "search" onclick="search_again()">Search</button>
+                <script>
+                    function search_again(){
+                    name = document.getElementById("search-bar").value;
+                    localStorage.setItem("value", name);
+                    location.reload();
+                }
+                </script>
+            </div>
+        </nav>
+        <div class="display">
+            <img id="poster">
+            <div id="name"></div>
+            <div id="genre">Genre . Rating . Runtime</div>
+            <table>
+                <tr id="result-row">
+                    <td id="imDB-result">imDB</td>
+                    <td id="Meta-result">Metacritic</td>
+                    <td id="Rotten-result">Rotten tomatoes</td>
+                </tr>
+                <tr>
+                    <td id="imDB"><i>imDB</i></td>
+                    <td id="Meta"><i>Metacritic</i></td>
+                    <td id="Rotten"><i>Rotten tomatoes</i></td>
+                </tr>
+            </table>
+            <div id="release-date"><i>Release Date: </i><span id="release-date-result"></span></div>
+            <div id="director"><i>Directors: </i><span id="director-result"></span></div>
+            <div id="actors"><i>Actors: </i><span id="actors-result"></span></div>
+            <div id="plot"><i>Plot: </i><span id="plot-result"></span></div>
+            <div id="language"><i>Language: </i><span id="language-result"></span></div>
+            <div id="box-office"><i>Box-office: </i><span id="box-office-result"></span></div>
+            <script>
+                var httpreq = new XMLHttpRequest();
+                url = "https://www.omdbapi.com/?apikey=609541a4&t="+localStorage.getItem("value");
+                httpreq.open("GET", url);
+                httpreq.send();
+                httpreq.onreadystatechange = function(){
+                    if (this.readyState == 4 && this.status == 200){
+                        movie_data = JSON.parse(this.responseText);
+                        document.getElementById("name").innerHTML = "<h1>"+movie_data.Title+" ("+movie_data.Year+")"+"</h1>";
+                        document.getElementById("poster").src = movie_data.Poster;
+                        document.getElementById("release-date-result").innerHTML = movie_data.Released;
+                        document.getElementById("genre").innerHTML = movie_data.Genre+" . "+movie_data.Rated+" . "+movie_data.Runtime;
+                        document.getElementById("imDB-result").innerHTML = movie_data.imdbRating;
+                        document.getElementById("Meta-result").innerHTML = movie_data.Ratings[2].Value;
+                        document.getElementById("Rotten-result").innerHTML = movie_data.Ratings[1].Value;
+                        document.getElementById("plot-result").innerHTML = movie_data.Plot;
+                        document.getElementById("director-result").innerHTML = movie_data.Director;
+                        document.getElementById("actors-result").innerHTML = movie_data.Actors;
+                        document.getElementById("language-result").innerHTML = movie_data.Language;
+                        document.getElementById("box-office-result").innerHTML = movie_data.BoxOffice;
+                    }
+                localStorage.clear();
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>

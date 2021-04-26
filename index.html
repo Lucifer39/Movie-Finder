@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whats my movie?</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">What's my movie?</h1>
+        <div class="search-box">
+            <input type="text" class="search" id="search-bar" placeholder="Type the name of your movie">
+            <div class="button"><a href="searched.html" style="text-decoration: none;"><button id="click-here" style="display: block;" onclick="test()">Search</button></a></div>
+            <script>
+                function test(){
+                localStorage.setItem("value", document.getElementById("search-bar").value)
+                }
+                </script>
+        </div>
+    </div>
+</body>
+</html>

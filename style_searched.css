@@ -1,0 +1,133 @@
+*{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+body{
+    background-image: linear-gradient(to right top, #fec5bb, #f8cdbc, #f2d5c1, #ecdcca, #e8e2d5, #e8e2d3, #e8e3d2, #e7e3d0, #eadec1, #efd8b2, #f6d0a5, #fec89a);
+}
+
+.container{
+    height:98vh;
+}
+
+.navbar{
+    height: 60px;
+    border-radius: 5px;
+}
+
+
+
+.logo{
+    display: inline;
+    font-family: 'Sacramento', cursive;
+    font-size: 30px;
+    margin-top: 15px;
+    font-weight: 200;
+}
+
+.links{
+    float: right;
+    margin-top: 10px;
+}
+
+.links input{
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #926057;
+    outline: none;
+    font-size: 10px;
+    padding-left: 5px;
+}
+
+i{
+    font-weight: 550;
+}
+
+.links button{
+    height: 20px;
+    border-radius: 20px;
+    background-color: #926057;
+    border: none;
+    color: #fff;
+}
+
+.display{
+    height: 85vh;
+    padding-top: 40px;
+}
+
+.results{
+    height: 70%;
+    width: 50%;
+}
+
+img{
+    aspect-ratio: 21/40;
+    height: 250px;
+    margin-left: 20px;
+    /*padding: 20px;*/
+    float: left;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#name{
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+#genre{
+    text-align: center;
+    margin-top: -30px;
+}
+
+#release-date{
+    padding: 5px;
+    margin-top: 20px;
+    margin-left: 170px;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+td{
+    padding: 15px;
+    font-size: 15px;
+    text-align: center;
+}
+
+#result-row{
+    font-size: 20px;
+}
+
+
+#director{
+    padding: 10px;
+}
+
+#actors{
+    padding: 10px;
+}
+
+#plot{
+    padding: 10px;
+}
+
+#language{
+    padding: 10px;
+}
+
+#box-office{
+    padding: 10px;
+}
+
+@media (max-width: 474px) and (min-width: 290px){
+    #release-date{
+        margin-left: auto;
+    }
+}
